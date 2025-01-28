@@ -41,7 +41,19 @@
         background: var(--a-ft-c);
     }
 }
+@keyframes welcome-user-animation{
+    0%{}
+    25%{
+        transform: translateX(-1%);
+    }
+    75%{
+        transform: translateX(1%);
+    }
+    100%{
+        transform: translateX(0);
+    }
 
+}
 
 *{
     box-sizing: border-box; 
@@ -74,13 +86,44 @@ button:hover{
     animation-fill-mode: forwards;
 }
 
-div .container{
+.container{
     display:flex; 
-    place-content: center;
+    align-items:center; justify-content: center;
+    width: 100%; height: 100%;
+}
+
+form{
+    width:100%; height:100%;
+    display:inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+h1{
+    padding: 0 1ch 0 1ch;
+    color: var(--s-txt-c);
+    font-weight: 700;
+    letter-spacing: 0.1ch;
+
+}
+
+h2{
+    padding: 0 1ch 0 1ch;
+    color: var(--s-txt-c);
+    font-weight: 500;
+    letter-spacing: 0.1ch;
 }
 
 html{
     background: var(--m-bg-c);
+}
+
+.icon{
+    position: relative; top: 0.5ch;
+    height: 2.2ch;
+}
+.icon2{
+    height: 2.2ch;
 }
 
 #layout1, #layout2{
@@ -103,13 +146,25 @@ html{
     animation-name: hover-link-side; animation-duration: 0.5s; animation-fill-mode: forwards;
 }
 
-.icon{
-    position: relative; top: 0.5ch;
-    height: 2.2ch;
-}
-
 p{
     padding: 0 1ch 0 1ch;
+    color: var(--m-txt-c);
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+
+.searchbar{
+    background-color: var(--m-bg-c);
+    width: 80%;
+    border-radius: 1ch;
+    border: 0;
+    height: 3ch;
+}
+searchbar:focus{
+    background-color: var(--m-bg-c);
+    outline: none;
+
 }
 
 #side-link-group1{
@@ -125,6 +180,11 @@ p{
     margin-left: 3ch;
 }
 
+.side-text{
+    font-style:oblique;
+    font-weight:400;
+    font-size: 0.8rem;
+}
 #top-left-logo{
     grid-area:top-left-logo;
     height:100%;
@@ -132,19 +192,19 @@ p{
     display:flex; justify-content: center; align-items: center;
 
     #logo{
-        width: 80%;
-        height: auto;
+        width: 190px;
+        height: 45px
     }
 }
 
-/* development borders 
+/* development borders */
 *{
     border: 1px solid white;
 }
 body,html{
     border: 0;
 }
-*/
+
 /* layouts */
 
 @media screen and (min-width: 140ch){
@@ -157,13 +217,45 @@ body,html{
     #layout1{
         grid-row: 1 / 2;
         grid-column: 2 / 4;
+
+        display:grid;
+        grid-template: 1fr 1.3fr / 2fr 1fr;
+
+        #searchbar-area{
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        #user-features-area{
+            grid-area: 1 / 2 / 3 / 3;
+        }
+        
+        #welcome-user-area{
+            grid-area: 2 / 1 / 3 / 2;
+
+            display:grid;
+            grid-template: 1fr / 50px 100px 1fr 50px;
+
+            #profile-pic-1{
+                grid-area: 1 / 2/ 2 / 3;
+            }
+            #welcome{
+                grid-area: 1/ 3/ 2/ 4;
+                display:flex; flex-direction:column;
+            }
+        }
+        #welcome-user-area:active{
+            animation-name: welcome-user-animation;
+            animation-duration: 1s;
+            animation-iteration-count:infinite;
+            animation-timing-function: linear;
+        }
     }
     #layout2{
         grid-row: 1 / 3;
         grid-column: 1 / 2;
 
         display:grid;
-        grid-template: 100px 6fr 3fr 4fr / 1fr;
+        grid-template: 170px 6fr 3fr 4fr / 1fr;
 
         grid-template-areas: "top-left-logo" "side-link-group1" "side-link-group2";
     }

@@ -12,7 +12,7 @@ The first thing i shuould do is divide the pages in the right way and already or
 
 # content
 
-layout1: logo, searchbar and welcome esclamation, user features.
-layout2: links to features (home, profile, messages, history, tasks, community and settings, support and privacy)
+layout1: searchbar and welcome esclamation, user features.
+layout2: logo, and links to features (home, profile, messages, history, tasks, community and settings, support and privacy)
 layout3: projects with dashboards
 layout4: announcements with some announcements and trending, with some profile
