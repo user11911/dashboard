@@ -1,4 +1,5 @@
 @import 'node_modules/modern-normalize/modern-normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 @media (prefers-color-scheme:dark){
     :root{
@@ -31,6 +32,7 @@
     }
     100% {
         transform: translateX(10px);
+        color: var(--s-txt-c)
     }
 }
 @keyframes hover-change-color {
@@ -52,6 +54,9 @@ body{
     scroll-behavior: smooth;
 
     display:grid;
+
+    font-family: 'roboto mono';
+    font-weight: 500;
 }
 
 button{
@@ -85,6 +90,11 @@ html{
     background: var(--m-bg-c);
 }
 
+.link{
+    color: var(--m-txt-c);
+    text-decoration: none;
+    padding: 1ch;
+}
 .link:hover{
     color: var(--s-t-c);
 }
@@ -93,8 +103,38 @@ html{
     animation-name: hover-link-side; animation-duration: 0.5s; animation-fill-mode: forwards;
 }
 
+.icon{
+    position: relative; top: 0.5ch;
+    height: 2.2ch;
+}
+
 p{
     padding: 0 1ch 0 1ch;
+}
+
+#side-link-group1{
+    grid-area: 'side-link-group1';
+    display:flex; flex-direction:column;
+    align-self: center;
+    margin-left:3ch;
+}
+#side-link-group2{
+    grid-area: 'side-link-group2';
+    display:flex; flex-direction:column;
+    align-self: center;
+    margin-left: 3ch;
+}
+
+#top-left-logo{
+    grid-area:top-left-logo;
+    height:100%;
+
+    display:flex; justify-content: center; align-items: center;
+
+    #logo{
+        width: 80%;
+        height: auto;
+    }
 }
 
 /* development borders 
@@ -105,7 +145,6 @@ body,html{
     border: 0;
 }
 */
-
 /* layouts */
 
 @media screen and (min-width: 140ch){
@@ -117,11 +156,16 @@ body,html{
     
     #layout1{
         grid-row: 1 / 2;
-        grid-column: 1 / 4;
+        grid-column: 2 / 4;
     }
     #layout2{
-        grid-row: 2 / 3;
+        grid-row: 1 / 3;
         grid-column: 1 / 2;
+
+        display:grid;
+        grid-template: 100px 6fr 3fr 4fr / 1fr;
+
+        grid-template-areas: "top-left-logo" "side-link-group1" "side-link-group2";
     }
     #layout3{
         grid-row: 2 / 3;
