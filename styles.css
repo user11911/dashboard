@@ -9,22 +9,20 @@
         --s-txt-c: rgb(255,255,255);
         --m-ft-c: rgb(240,200,0);
         --a-ft-c: rgb(100,240,0);
-        --selection: rgb(100,100,200);
     }
 }
 
 @media (prefers-color-scheme:light){
     :root{
-        --m-bg-c: rgb(255,255,255);;
-        --s-bg-c: rgb(200,200,200);;
+        --m-bg-c: rgb(255,255,255);
+        --s-bg-c: rgb(255,255,255);
         --m-txt-c: rgb(25, 25, 50);
         --s-txt-c: rgb(50, 50, 75);
         --m-ft-c: rgb(240,200,0);
         --a-ft-c: rgb(100,240,0);
-        --selection: rgb(100,100,200);
-
     }
 }
+
 
 @keyframes announcements-trending-hover{
     0%{}
