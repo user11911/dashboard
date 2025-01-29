@@ -153,6 +153,16 @@ p{
     font-size: 0.8rem;
 }
 
+.project-card{
+    border: 2px solid var(--m-ft-c);
+    border-radius: 2ch; 
+    background: var(--s-bg-c);
+
+    display:grid;
+    grid-template: 200px 90px/ 1fr 2fr;
+
+}
+
 
 .searchbar{
     background-color: var(--m-bg-c);
@@ -197,7 +207,7 @@ searchbar:focus{
     }
 }
 
-/* development borders */
+/* development borders 
 *{
     border: 1px solid white;
 }
