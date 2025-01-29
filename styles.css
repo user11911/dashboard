@@ -267,14 +267,14 @@ searchbar:focus{
     font-size: 0.8rem;
 }
 #top-left-logo{
+    margin-left: 1ch;
     grid-area:top-left-logo;
     height:100%;
 
     display:flex; justify-content: center; align-items: center;
 
     #logo{
-        width: 190px;
-        height: 45px
+        height: 90px; width: auto;
     }
 }
 
